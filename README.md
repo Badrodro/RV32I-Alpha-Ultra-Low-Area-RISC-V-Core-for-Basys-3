@@ -1,35 +1,21 @@
 # Simple-RV32I-core-in-VHDL
-My first VHDL project, if you have any questions or suggestions you can contact me.
+My first VHDL project, if you have any questions or suggestions you can contact me.<br />
 
-TO BE DONE:
+TO BE DONE:<br />
 -GDSI file <br />
 -Formal verification
 
-
+```mermaid
 graph TD
-    subgraph Instruction_Fetch
-        PC[Program Counter] --> IM[Instruction Memory / ROM]
+    subgraph Fetch
+        PC[Program Counter] --> IM[Instruction Memory]
     end
-
-    IM --> Decoder[Instruction Decoder]
-    Decoder --> CU[Control Unit / Stall Logic]
-
-    subgraph Execution_Core
+    IM --> Decoder[Decoder]
+    subgraph Execute
+        Decoder --> CU[Control Unit]
         CU --> RF[Register File]
-        RF --> ALU[ALU - 314 LUTs Optimized]
-        Imm[Immediate Generator] --> ALU
+        RF --> ALU[ALU - 314 LUTs]
     end
-
-    subgraph Memory_Access
-        ALU --> DM[Data Memory / RAM]
-    end
-
-    subgraph Write_Back
-        DM --> MUX_WB[Write-Back Mux]
-        ALU --> MUX_WB
-        MUX_WB --> RF
-    end
-
-    CU -.->|Control Signals| ALU
-    CU -.->|Stall/Trap| PC
-    ALU -->|Zero Flag| CU
+    ALU --> RAM[Data RAM]
+    RAM --> WB[Write-Back]
+    WB --> RF
