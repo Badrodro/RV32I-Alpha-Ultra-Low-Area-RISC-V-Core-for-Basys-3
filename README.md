@@ -34,8 +34,10 @@ To maintain an ultra-low ressource utilization, the core uses a specialized stal
 * **General Instructions:** Operations such as ALU computations (`add`, `sub`, `xor`) and branches achieve a **CPI of 1**.
 * **Memory Operations:** Due to the synchronous nature of the SRAM and the integrated stall unit, the `LOAD` instruction require **2 cycles** ($CPI = 2$) to ensure data integrity and avoid hazards. However, the `STORE` instruction is done in **1 cycle**.
 * **Exception Handling:** Native support for `ebreak` and `ecall` through a dedicated **Trap** signal, allowing for clean program termination and hardware debugging.
+## Verification
 
-
+The ROM contains a torture test program.
+- [torture_test](asm/torture_test.s)
 ## To be done
 
 * **GDSII of the core:** To understand the ASIC flow using Openlane and the Skywater PDK (130nm).
