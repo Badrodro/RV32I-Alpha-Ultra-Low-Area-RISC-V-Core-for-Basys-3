@@ -43,5 +43,9 @@ The ROM contains a torture test program.
 * **GDSII of the core:** To understand the ASIC flow using Openlane and the Skywater PDK (130nm).
 * **Formal verification:** Using RISC-V formal.
 * **Custom ISA extension:** Implementation of matrix-vector multiplication (MVM) unit.
+## Contact
+
+If you have any questions or suggestions about my project or me, contact me at my email:
+* **Email:** Badreddine_Benfettouma@etu.ube.fr
 ---
 *Designed and verified via Xilinx Vivado 2025.2 by Badreddine BENFETTOUMA, currently student in University of Bourgogne Europe. My goal is to contribute to researches about DSA and IMC.*
